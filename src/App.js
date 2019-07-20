@@ -1,30 +1,14 @@
-import React, {Component} from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import HomePage from './HomePage';
 import Login from './Login';
-import './App.css';
 
-
-class App extends Component{
-  render() {
-    return (
-      <div>
-        <AppBar color ="primary" position="static">
-        <Typography variant="title" color="inherit">
-          <Toolbar>
-            <h1>Pine Events</h1>
-        </Toolbar>
-        </Typography>
-        
-        </AppBar>
-      <Login />
-      </div>
-    
-    );
-  }
-}
-
-
-
+const App = () => (
+  <div>
+    <Switch>
+      <Route exact path="/" component={HomePage} />
+      <Route path="/login" component={Login} />
+    </Switch>
+  </div>
+);
 export default App;
